@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="home.css">
+    <title>MyPass - Password Vault</title>
+</head>
+
+<body>
+    <%- include('templates/navbar') %>
+    <h2 class="text-center text-danger py-2">Create an Account</h2>
+    <div class="signup px-2">
+        <% if (messages.info) { %>
+            <p class="text-center alert alert-danger p-1"><%= messages.info %></p><br>
+        <% } %>
+        <form action="/signup" method="POST">
+            <label for="username">Username <span class="text-danger">*</span></label><br>
+            <input type="text" name="username" id="username" placeholder="Eg. test" required><br><br>
+            <label for="email">Email Id <span class="text-danger">*</span></label><br>
+            <input type="email" name="email" id="email" placeholder="Eg. test@gmail.com" required><br><br>
+            <label for="password">Password <span class="text-danger">*</span></label><br>
+            <input type="password" name="password" id="password" placeholder="Eg. test@123" required><br><br>
+            <input type="submit" value="Sign Up" class="btn btn-success"><br><br>
+        </form>
+        <p>Already have an Account? <a href="../">Click here to Login</a></p>
+    </div>
+</body>
+
+</html>

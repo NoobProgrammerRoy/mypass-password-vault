@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="index.css">
+    <title>MyPass - Password Vault</title>
+</head>
+
+<body>
+    <%- include('templates/navbar') -%>
+        <!-- Main -->
+        <div class="container grid main">
+            <div class="flex flex-column flex-justify-center">
+                <h1 class="text-center py-1 text-color">MyPass - Password Vault</h1>
+                <p class="text-center text-color text-bold">Your Privacy is Your Authority!</p>
+            </div>
+            <div class="my-2 p-2 login">
+                <form action="/" method="POST">
+                    <h2 class="py-1 text-success">Welcome Back</h2>
+                    <% if (messages.info) { %>
+                        <p class="alert alert-danger p-1"><%= messages.info %></p><br>
+                    <% } %>
+                    <% if (messages.success) { %>
+                        <p class="alert alert-success p-1"><%= messages.success %></p><br>
+                    <% } %>
+                    <label for="email">Email Id <span class="text-danger">*</span></label><br>
+                    <input type="email" name="email" id="email" placeholder="Eg. test@gmail.com" required><br><br>
+                    <label for="password">Password <span class="text-danger">*</span></label>
+                    <input type="password" name="password" id="password" placeholder="Eg. test@123" required><br><br>
+                    <input type="submit" value="Log In" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="container about">
+            <h2 class="text-center text-danger py-2">What is MyPass?</h2>
+            <p class="text-center text-color text-bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Asperiores corporis
+                accusamus sit non alias et praesentium animi harum voluptas! Praesentium minus similique autem ullam
+                sequi asperiores, repellat magni doloribus sit.</p>
+        </div>
+
+        <!-- How It Works -->
+        <div class="my-2 py-2 bg-dual">
+            <h2 class="text-center text-danger">How It Works?</h2>
+            <div class="container grid works">
+                <div class="my-1">
+                    <p class="text-center p-1">
+                        <span class="text-danger">*</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore itaque nisi dolorem quia
+                        dolore ratione consequuntur officiis facilis ad laborum.
+                    </p>
+                </div>
+                <div class="my-1">
+                    <p class="text-center p-1">
+                        <span class="text-danger">*</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, alias eligendi nobis quia
+                        possimus totam magni aliquid fuga tenetur necessitatibus.
+                    </p>
+                </div>
+                <div class="my-1">
+                    <p class="text-center p-1">
+                        <span class="text-danger">*</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quo obcaecati placeat sunt
+                        perferendis eos facilis praesentium officia labore tempore.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="my-3 py-1" id="features">
+            <h2 class="text-center text-danger py-1">Features</h2>
+            <div class="container grid features">
+                <div class="flex flex-column flex-align-center bg-dual m-1 p-1">
+                    <img src="img/icon1.png" alt="">
+                    <h3 class="py-1 text-center text-color">Our Features</h3>
+                    <p class="text-center text-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                        tempore!</p>
+                </div>
+                <div class="flex flex-column flex-align-center bg-dual m-1 p-1">
+                    <img src="img/icon2.png" alt="">
+                    <h3 class="py-1 text-center text-color">Our Features</h3>
+                    <p class="text-center text-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                        tempore!</p>
+                </div>
+                <div class="flex flex-column flex-align-center bg-dual m-1 p-1">
+                    <img src="img/icon3.png" alt="">
+                    <h3 class="py-1 text-center text-color">Our Features</h3>
+                    <p class="text-center text-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                        tempore!</p>
+                </div>
+            </div>
+        </div>
+
+        <%- include('templates/footer') -%>
+</body>
+
+</html>

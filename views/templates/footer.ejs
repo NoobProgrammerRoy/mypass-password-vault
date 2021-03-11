@@ -1,0 +1,52 @@
+<style>
+    /* Footer */
+    footer {
+        background-color: #131667;
+    }
+
+    footer .grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    @media all and (max-width: 767px) {
+        footer .grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    footer ul {
+        list-style: none;
+    }
+
+    footer .fa {
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        color: #fafafa;
+    }
+</style>
+
+<footer>
+    <div class="container">
+        <div class="grid">
+            <div class="py-1">
+                <h2 class="text-light">MyPass - Password Vault</h2>
+            </div>
+            <div class="py-1">
+                <ul>
+                    <li><a href="#" class="text-light">Home</a></li>
+                    <li><a href="#" class="text-light">How It Works</a></li>
+                    <li><a href="#" class="text-light">Join Now</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <p class="text-center text-light py-1">Follow us on our social media handles for latest updates, news etc.</p>
+            <div class="flex flex-row flex-justify-center py-2">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+    </div>
+</footer>

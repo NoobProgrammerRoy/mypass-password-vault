@@ -1,0 +1,92 @@
+<style>
+    /* Navbar */
+    nav {
+        background-color: #131667;
+    }
+
+    nav .title {
+        font-size: 1.25rem;
+    }
+
+    .width {
+        width: 100%;
+    }
+
+    @media all and (max-width: 767px) {
+        .nav-features {
+            background-color: #131647;
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+        }
+
+        .nav-features a {
+            border-bottom: 2px solid #131647;
+        }
+    }
+
+    @media all and (min-width: 768px) {
+        .nav-features a {
+            border-bottom: 2px solid #131667;
+        }
+
+        .nav-features a:hover {
+            border-bottom: 2px solid white;
+        }
+    }
+</style>
+
+<nav>
+    <!-- <div class="flex flex-row flex-align-center container" id="navbar"> -->
+    <div class="flex container" id="navbar">
+        <div class="mx-2 my-1">
+            <a href="#" class="text-light title">MyPass</a>
+        </div>
+        <!-- <div class="flex flex-row flex-justify-flex-end nav-features mx-2 my-1" id="inner-navbar"> -->
+        <div class="flex flex-row nav-features mx-2 my-1" id="inner-navbar">
+            <a href="#navbar" class="mx-1 text-light">Home</a>
+            <a href="#features" class="mx-1 text-light">Features</a>
+            <a href="/signup" class="mx-1 text-light">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    window.addEventListener('load', () => {
+        let navbar = document.getElementById('navbar')
+        let innerNavbar = document.getElementById('inner-navbar')
+        if (screen.width < 768) {
+            navbar.classList.add('flex-column')
+            navbar.classList.add('flex-align-center')
+            innerNavbar.classList.add('flex-justify-center')
+        }
+        else {
+            navbar.classList.add('flex-row')
+            navbar.classList.add('flex-justify-center')
+            innerNavbar.classList.add('flex-justify-flex-end')
+            innerNavbar.classList.add('width')
+        }
+    })
+
+    window.addEventListener('resize', () => {
+        let navbar = document.getElementById('navbar')
+        let innerNavbar = document.getElementById('inner-navbar')
+        if (screen.width < 768) {
+            navbar.classList.add('flex-column')
+            navbar.classList.remove('flex-row')
+            navbar.classList.add('flex-align-center')
+            navbar.classList.remove('flex-justify-center')
+            innerNavbar.classList.add('flex-justify-center')
+            innerNavbar.classList.remove('flex-justify-flex-end')
+            innerNavbar.classList.remove('width')
+        }
+        else {
+            navbar.classList.remove('flex-column')
+            navbar.classList.add('flex-row')
+            navbar.classList.remove('flex-align-center')
+            navbar.classList.add('flex-justify-center')
+            innerNavbar.classList.remove('flex-justify-center')
+            innerNavbar.classList.add('flex-justify-flex-end')
+            innerNavbar.classList.add('width')
+        }
+    })
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="home.css">
+    <title>MyPass - Password Vault</title>
+</head>
+
+<body>
+    <%- include('templates/navbar') %>
+        <!-- Profile and Password Generator -->
+        <div class="container grid">
+            <div class="p-2">
+                
+                    <h2 class="text-danger my-1">Your Profile</h2>
+                    <span>Username</span><br>
+                    <p class="p-1 text-secondary"><%= user.username %></p><hr><br>
+                    <span>Email Id</span><br>
+                    <p class="p-1 text-secondary"><%= user.email%></p><hr><br>
+                    <span>Password</span><br>
+                    <p class="p-1 text-secondary"><%= password %></p><hr><br>
+                    <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+                
+            </div>
+            <div class="p-2">
+                <form action="/home" method="POST">
+                    <h2 class="text-danger my-1">Generate Password</h2>
+                    <% if (messages.info) { %>
+                        <p class="text-center alert alert-danger p-1"><%= messages.info %></p><br>
+                    <% } %>
+                    <label for="application">Application</label>
+                    <input type="text" name="application" id="application" placeholder="Eg:Facebook" required><br><br>
+                    <label for="Length">Length</label>
+                    <input type="range" name="length" id="length" min="6" max="30" value="18"><br><br>
+                    <input type="submit" value="Generate Password" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+
+        <!-- Passwords -->
+        <div class="bg-dual py-2">
+            <div class="container">
+                <h2 class="text-center text-danger my-1">Your Passwords</h2>
+                <% if (user.savedPasswords.length == 0) { %>
+                    <p class="text-center text-color text-bold">Oops....Seems like you haven't generated any passwords yet</p>
+                <% } else { %>
+                    <p class="text-center text-color text-bold py-1">Tap/Click on the application to select its password</p>
+                    <div class="text-center">
+                        <table class="password">
+                            <tr>
+                                <th>Application</th>
+                                <th>Copy</th>
+                                <th>Delete</th>
+                            </tr>
+                            <% user.savedPasswords.forEach(function(item) { %>
+                                <tr>
+                                    <td class="p-2"><%= item.application %></td>
+                                    <td class="p-2"><a href="#" class="fa fa-clone text-success" onclick="copyPassword('<%= item.applicationPassword %>'); return false;"></a></td>
+                                    <td class="p-2"><a href="../delete/<%= item._id %>" class="fa fa-times text-danger"></a></td>
+                                </tr>
+                            <% }) %>
+                        </table>
+                    </div>
+                <% } %>
+                <p class="text-center text-color text-bold"><span class="text-danger">* </span>Passwords are encrypted and stored using our secure mechanisms, MyPass cannot access your passwords even if we try to. Rest assured, your passwords are safe and secure.</p>
+
+            </div>
+        </div>
+
+        <%- include('templates/footer') %>
+
+        <script>
+            function copyPassword(id){
+                alert("Password is : " + id)
+            }
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+/* Body */
+body{
+    background-color: #fafafa;
+}
+
+/* Text */
+.text-color{
+    color: #131667;
+}
+
+/* Background */
+.bg-dual{
+    background-color: #f0f0f0;
+}
+
+/* Main */
+.main{
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 2.5fr 1.5fr;
+}
+
+.login{
+    border: 2px solid #d0d0d0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem #d0d0d0;
+}
+
+.login:hover{
+    box-shadow: 0 0 0.5rem #a0a0a0;
+}
+
+input[type=email], input[type=password]{
+    background-color: #fafafa;
+    border: none;
+    border-bottom: 2px solid #d0d0d0;
+    border-radius: 0;
+    transition-duration: 0.2s;
+}
+
+input:focus{
+    border-bottom: 2px solid #a0a0a0;
+}
+
+/* How It Wokrks */
+.works{
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.works div p{
+    color: #131647;
+    font-weight: bold;
+}
+
+/* Features */
+.features{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.features div{
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem #fafafa;
+}
+
+.features div:hover{
+    box-shadow: 0 0 0.5rem #a0a0a0;
+    cursor: pointer
+}
+
+@media all and (max-width: 767px){
+    .main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .features{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.features img{
+    width: 40%;
+    filter: brightness(50%);
+}
